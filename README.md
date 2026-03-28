@@ -134,7 +134,7 @@ BetEvent は英語と日本語に対応しています。
 ## uMod / 公開ページ
 
 uMod page:  
-公開ページURLをここに追加してください。
+https://umod.org/plugins/BRKkjA9y8Z
 
 Example:  
 `https://umod.org/plugins/...`
