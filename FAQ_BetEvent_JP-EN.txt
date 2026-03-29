@@ -1,0 +1,313 @@
+BetEvent / 公開後FAQ（英和版）
+BetEvent / Post-Release FAQ (EN + JP)
+=====================================
+
+このFAQは、公開後によくある質問と回答を英和併記でまとめたものです。
+GitHub / uMod / X での案内補助として利用できます。
+
+This FAQ summarizes common post-release questions and answers in both English and Japanese.
+It can be used as supplemental guidance for GitHub, uMod, and X posts.
+
+--------------------------------------------------
+1. 導入したのに動きません
+1. The plugin does not work after installation
+--------------------------------------------------
+Q. 導入したのに動きません。
+Q. The plugin does not work after installation.
+
+A.
+まずは次の4点を確認してください。
+
+1) プラグインがエラーなく読み込まれているか
+2) Config / Lang ファイルが生成されているか
+3) 権限設定が正しいか
+4) 基本コマンドまたは管理UIが開くか
+
+また、他のUI系・イベント系・報酬系プラグインを併用している場合は、
+競合の可能性があります。
+
+A.
+Please check the following four points first.
+
+1) Whether the plugin loaded without errors
+2) Whether the Config / Lang files were generated
+3) Whether permissions are set correctly
+4) Whether the basic command or admin UI opens correctly
+
+Also, if you are using other UI, event, or reward-related plugins,
+there may be a conflict.
+
+確認してほしい内容 / Helpful report details:
+- コンソールエラー / Console errors
+- 使用中の関連プラグイン名 / Related plugins in use
+- 再現手順 / Steps to reproduce
+- スクリーンショット / Screenshots
+
+--------------------------------------------------
+2. UIが崩れます / ボタンが重なります
+2. The UI is broken / Buttons overlap
+--------------------------------------------------
+Q. UIが崩れます。ボタンが重なります。
+Q. The UI is broken. Buttons overlap.
+
+A.
+サーバーごとのUI構成、他プラグインのCUI、解像度差、
+UIスケール差によって表示が変わる場合があります。
+
+まずは単体導入に近い状態で再確認してください。
+そのうえで再現する場合は、スクリーンショット付きで報告してください。
+
+A.
+Display may vary depending on the server UI setup, other CUI plugins,
+screen resolution, and UI scale differences.
+
+Please test again in a near-standalone environment first.
+If the issue still occurs, report it with screenshots.
+
+報告時にあると助かる情報 / Helpful report details:
+- 崩れている画面のスクリーンショット / Screenshot of the broken screen
+- 使用解像度 / Screen resolution
+- 併用しているUI系プラグイン / UI-related plugins in use
+- どの画面で発生するか / Which screen causes the issue
+
+--------------------------------------------------
+3. 英語のままです / 一部だけ日本語です
+3. It stays in English / Some parts are still Japanese
+--------------------------------------------------
+Q. 英語のままです。あるいは一部だけ日本語です。
+Q. It stays in English, or some parts are still Japanese.
+
+A.
+Langファイル生成後に、再ロードや再接続が必要になる場合があります。
+既存のLangファイルが残っていると、その内容が優先されることもあります。
+
+A.
+After Lang files are generated, a reload or reconnect may be required.
+If old Lang files remain, their contents may take priority.
+
+確認項目 / Checklist:
+- Langファイルが生成されているか / Whether Lang files were generated
+- ファイル名や配置先が正しいか / Whether the file name and location are correct
+- リロード後に再接続したか / Whether you reconnected after reload
+- 旧Langファイルが残っていないか / Whether old Lang files still remain
+
+--------------------------------------------------
+4. 設定を変えても反映されません
+4. Changes are not applied after editing the config
+--------------------------------------------------
+Q. 設定変更が反映されません。
+Q. My config changes are not applied.
+
+A.
+設定項目によっては即時反映ではなく、
+再ロードや再初期化が必要な場合があります。
+
+まずは次を確認してください。
+- 設定ファイルが保存されているか
+- JSON / Config の構文が崩れていないか
+- リロードを行ったか
+
+A.
+Some settings may not apply immediately
+and may require a reload or reinitialization.
+
+Please check the following first:
+- Whether the config file was saved
+- Whether the JSON / Config syntax is valid
+- Whether you reloaded the plugin
+
+--------------------------------------------------
+5. どのコマンドを使えばいいですか
+5. Which command should I use first?
+--------------------------------------------------
+Q. 何を使えば開始できますか。
+Q. Which command should I use to get started?
+
+A.
+まずは README / uMod 説明文に記載した基本コマンドを確認してください。
+管理UIがある場合は、最初の動作確認はUI経由が安全です。
+
+A.
+Please check the basic commands listed in the README / uMod description first.
+If an admin UI exists, initial testing through the UI is the safest approach.
+
+--------------------------------------------------
+6. 権限は必要ですか
+6. Are permissions required?
+--------------------------------------------------
+Q. 権限設定は必要ですか。
+Q. Are permissions required?
+
+A.
+管理機能や特定機能を使う場合は、permission設定が必要なことがあります。
+一般プレイヤー用機能と管理者用機能は分けて確認してください。
+
+A.
+Permissions may be required for admin functions or certain features.
+Please verify player features and admin features separately.
+
+--------------------------------------------------
+7. サーバー再起動後も状態は維持されますか
+7. Will the state remain after a server restart?
+--------------------------------------------------
+Q. 再起動後も設定や状態は維持されますか。
+Q. Will settings and state remain after a restart?
+
+A.
+保持対象は実装内容に依存します。
+設定、予約、進行状態など、どこまで保存されるかは
+README または説明文の対象項目を確認してください。
+
+保存まわりが不安な場合は、
+本番導入前にテストサーバーまたは再起動検証をおすすめします。
+
+A.
+What is preserved depends on the implementation.
+Please check the README or description for what is saved,
+such as settings, reservations, or progress state.
+
+If persistence is important for your setup,
+test it on a test server or verify it with a restart before production use.
+
+--------------------------------------------------
+8. 他プラグインと併用できますか
+8. Can this be used with other plugins?
+--------------------------------------------------
+Q. 他プラグインと併用できますか。
+Q. Can this be used with other plugins?
+
+A.
+多くの場合は可能ですが、次の競合要素に注意してください。
+
+- コマンド重複
+- UI重なり
+- permission競合
+- データ保存先の重複
+- 同系統機能の二重制御
+
+問題が出た場合は、
+単体動作確認 → 併用プラグインを1つずつ戻して切り分け
+の順で確認してください。
+
+A.
+In many cases, yes, but please watch for the following conflicts:
+
+- Command overlap
+- UI overlap
+- Permission conflicts
+- Shared data file conflicts
+- Double control from similar plugins
+
+If problems occur,
+test the plugin alone first, then re-enable other plugins one by one.
+
+--------------------------------------------------
+9. Config編集後にエラーが出ました
+9. I got an error after editing the config
+--------------------------------------------------
+Q. Configを編集したらエラーになりました。
+Q. I got an error after editing the config.
+
+A.
+JSON / Config 構文の崩れが原因のことが多いです。
+次を確認してください。
+
+- カンマの抜け
+- 括弧の対応
+- 引用符の閉じ忘れ
+- true / false の表記
+- 数値を文字列にしていないか
+
+A.
+This is often caused by broken JSON / Config syntax.
+Please check the following:
+
+- Missing commas
+- Matching brackets/braces
+- Unclosed quotation marks
+- true / false formatting
+- Numbers accidentally written as strings
+
+--------------------------------------------------
+10. 要望を送ってもいいですか
+10. Can I send feature requests?
+--------------------------------------------------
+Q. 機能要望を送ってもいいですか。
+Q. Can I send feature requests?
+
+A.
+歓迎です。
+ただし、次の2つは分けて送っていただけると対応しやすいです。
+
+- 不具合報告
+- 機能要望
+
+不具合報告では、再現手順とエラー内容を添えてください。
+要望では、利用目的や想定シーンがあると判断しやすくなります。
+
+A.
+Yes, feature requests are welcome.
+However, it helps a lot if you separate these two types:
+
+- Bug reports
+- Feature requests
+
+For bug reports, please include reproduction steps and error details.
+For feature requests, the intended use case helps with evaluation.
+
+--------------------------------------------------
+11. 不具合報告時に必要な情報
+11. What information should I include in a bug report?
+--------------------------------------------------
+Q. 何を送ればよいですか。
+Q. What should I send in a bug report?
+
+A.
+次の情報があると助かります。
+
+- プラグイン名とバージョン
+- Rust / Oxide(uMod) の状態
+- コンソールエラー
+- 再現手順
+- 使用中の関連プラグイン
+- スクリーンショット
+- 可能なら Config / Lang の該当箇所
+
+A.
+The following information is very helpful:
+
+- Plugin name and version
+- Rust / Oxide(uMod) status
+- Console errors
+- Steps to reproduce
+- Related plugins in use
+- Screenshots
+- Relevant Config / Lang sections if possible
+
+--------------------------------------------------
+12. 公開後の注意点
+12. Post-release notes
+--------------------------------------------------
+- サーバー構成や併用プラグインによって挙動差が出る場合があります
+- UI表示や言語反映は、再ロードや再接続で改善する場合があります
+- 問題切り分けは、単体確認から行うのが最短です
+- 不具合報告は、環境情報と再現手順があると対応が早くなります
+
+- Behavior may vary depending on server setup and installed plugins
+- UI display and language reflection may improve after reload or reconnect
+- The fastest way to troubleshoot is to test the plugin by itself first
+- Bug reports are much easier to handle when they include environment details and reproduction steps
+
+--------------------------------------------------
+13. X用の補足文（短文）
+13. Short note for X
+--------------------------------------------------
+日本語:
+補足:
+導入環境や併用プラグインにより、UI表示や言語反映に差が出る場合があります。
+不具合報告の際は、コンソールエラー・使用環境・スクリーンショットがあると助かります。
+
+English:
+Note:
+UI/layout and language reflection may vary depending on server environment and other installed plugins.
+If you report an issue, please include console errors, server/plugin context, and screenshots if possible.
